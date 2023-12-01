@@ -190,11 +190,11 @@ void opcontrol() {
 
     // . . .
     if (master.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
-     intake = 127;
+     intake = -127;
     }
 
     else if(master.get_digital(pros::E_CONTROLLER_DIGITAL_L2)){
-      intake = -127;
+      intake = 127;
     }
     else {
       intake = 0;
