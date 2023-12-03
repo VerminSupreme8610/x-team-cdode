@@ -1,5 +1,5 @@
 #include "main.h"
-#include "main.cpp"
+
 
 /////
 // For instalattion, upgrading, documentations and tutorials, check out website!

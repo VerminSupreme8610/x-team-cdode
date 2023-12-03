@@ -18,7 +18,7 @@ Drive chassis (
   ,{15, 1, 16}
 
   // IMU Port
-  ,13
+  ,12
 
   // Wheel Diameter (Remember, 4" wheels are actually 4.125!)
   //    (or tracking wheel diameter)
@@ -120,6 +120,7 @@ pros::ADIDigitalOut pogger('F');
 pros::ADIDigitalOut pog('H');
 pros::Motor intake(20);
 pros::Motor cata(11);
+pros::Motor blocker(3);
 /**
  * Runs the user autonomous code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via
@@ -212,11 +213,11 @@ void opcontrol() {
 //WORKS B WORKS NI
     }
     if (master.get_digital(pros::E_CONTROLLER_DIGITAL_B)){
-      pog.set_value(false);
+      pog.set_value(true);
 
     }
     if (master.get_digital(pros::E_CONTROLLER_DIGITAL_X)){
-      pog.set_value(true);
+      pog.set_value(false);
     }
     if (master.get_digital(pros::E_CONTROLLER_DIGITAL_X)){
       pogger.set_value(false);
