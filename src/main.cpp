@@ -176,9 +176,11 @@ bool cataRunning = false;
 void opcontrol() {
   // This is preference to what you like to drive on.
   chassis.set_drive_brake(MOTOR_BRAKE_BRAKE);
-    pog.set_value(true);
+    pog.set_value(false);
   pogger.set_value(false);
   // andrew is a bad builder so pog retract is true, pogger retract is false
+  // just kidding its fixed
+  // i love you andrew everything you touch turns to gold
   
 
   while (true) {
@@ -206,8 +208,21 @@ void opcontrol() {
 
     } else if(master.get_digital(pros::E_CONTROLLER_DIGITAL_R2)){
       cata = 0;
+      
 
     }
+    bool r1_pressed = false; // used in if statement for cata
+
+
+  if (master.get_digital(pros::E_CONTROLLER_DIGITAL_R1) && !r1_pressed) {
+    
+    cata = (cata = 110) ? 0 : 110;
+    r1_pressed = true; 
+
+
+      } else if (!master.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
+    r1_pressed = false; 
+      }
     if (master.get_digital(pros::E_CONTROLLER_DIGITAL_B)){
       pogger.set_value(true);
 //WORKS B WORKS NI

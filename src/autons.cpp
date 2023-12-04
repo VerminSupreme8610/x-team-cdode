@@ -203,10 +203,7 @@ void combining_movements() {
   chassis.wait_drive();
 }
 
-void basic_auton() {
-  chassis.set_drive_pid(24, DRIVE_SPEED, true);
-  cata = 110;
-}
+
 
 ///
 // Interference example
@@ -249,5 +246,11 @@ void interfered_example() {
 
 
 // . . .
-// Make your own autonomous functions here!
+void basic_auton() {
+  chassis.set_drive_pid(24, DRIVE_SPEED, true);
+  cata = 110;
+}
+void progskills() {
+  
+}
 // . . .

@@ -14,7 +14,11 @@
 
 #ifndef _PROS_MAIN_H_
 #define _PROS_MAIN_H_
-
+pros::ADIDigitalOut pogger('F');
+pros::ADIDigitalOut pog('H');
+pros::Motor intake(20);
+pros::Motor cata(11);
+pros::Motor blocker(3);
 /**
  * If defined, some commonly used enums will have preprocessor macros which give
  * a shorter, more convenient naming pattern. If this isn't desired, simply
